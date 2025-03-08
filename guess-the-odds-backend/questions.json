@@ -1,0 +1,32 @@
+[
+  {
+    "question": "Flipping a coin 10 times and getting heads every time",
+    "answer": 1024,
+    "explanation": "Each flip is 1/2, so 1/2 × 1/2 … ten times = 1/1,024."
+  },
+  {
+    "question": "Being dealt a royal flush in a 5-card poker hand",
+    "answer": 649740,
+    "explanation": "There are 4 royal flushes (one per suit) out of 2,598,960 possible 5-card hands."
+  },
+  {
+    "question": "Rolling two dice and getting a total of 7",
+    "answer": 6,
+    "explanation": "6 of the 36 combinations add up to 7 (1+6, 2+5, 3+4, and the reverse). It's the most common total."
+  },
+  {
+    "question": "Winning the Powerball jackpot with one ticket",
+    "answer": 292201338,
+    "explanation": "You need the 5 white balls out of 69 (11,238,513 combinations) and the red ball out of 26: 11,238,513 × 26 = 292,201,338."
+  },
+  {
+    "question": "At least two people sharing a birthday in a group of 23",
+    "answer": 1.97,
+    "explanation": "Surprisingly about 50.7%! With 23 people there are 253 possible pairs, so a match is more likely than not. (ignoring leap years)"
+  },
+  {
+    "question": "Rolling a Yahtzee (five of a kind) in a single roll of 5 dice",
+    "answer": 1296,
+    "explanation": "The first die can be anything, the 4 others must match it: (1/6)^4 = 1/1,296."
+  }
+]
