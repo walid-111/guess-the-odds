@@ -28,5 +28,75 @@
     "question": "Rolling a Yahtzee (five of a kind) in a single roll of 5 dice",
     "answer": 1296,
     "explanation": "The first die can be anything, the 4 others must match it: (1/6)^4 = 1/1,296."
+  },
+  {
+    "question": "Guessing a random 4-digit PIN on the first try",
+    "answer": 10000,
+    "explanation": "There are 10,000 possible codes from 0000 to 9999."
+  },
+  {
+    "question": "Being dealt pocket aces in Texas Hold'em",
+    "answer": 221,
+    "explanation": "6 ways to get two aces out of 1,326 possible starting hands: 1 in 221."
+  },
+  {
+    "question": "Hitting your number on a single spin of European roulette",
+    "answer": 37,
+    "explanation": "37 pockets (1 to 36 + the zero), only one is yours. The payout is 35 to 1, that's where the casino makes money."
+  },
+  {
+    "question": "Shuffling a playlist of 10 songs and getting them back in the original order",
+    "answer": 3628800,
+    "explanation": "10 songs can be ordered in 10! = 3,628,800 ways."
+  },
+  {
+    "question": "Your random Secret Santa draw (4 people) working out with nobody drawing themselves",
+    "answer": 2.67,
+    "explanation": "Out of the 24 ways to hand out the names, 9 have nobody getting themselves. So it fails more often than it works!"
+  },
+  {
+    "question": "Being dealt four of a kind in a 5-card poker hand",
+    "answer": 4165,
+    "explanation": "13 ranks × 48 choices for the 5th card = 624 hands out of 2,598,960."
+  },
+  {
+    "question": "Rolling three sixes with three dice",
+    "answer": 216,
+    "explanation": "(1/6)^3 = 1/216."
+  },
+  {
+    "question": "Winning the EuroMillions jackpot with one ticket",
+    "answer": 139838160,
+    "explanation": "5 numbers out of 50 (2,118,760 combinations) times 2 stars out of 12 (66 combinations) = 139,838,160."
+  },
+  {
+    "question": "Beating a random opponent 5 times in a row at rock paper scissors",
+    "answer": 243,
+    "explanation": "Each game you have 1 chance in 3 to win (ties count as fails here): (1/3)^5 = 1/243."
+  },
+  {
+    "question": "Guessing a random number between 1 and 100 on the first try",
+    "answer": 100,
+    "explanation": "Only 1 good answer out of 100."
+  },
+  {
+    "question": "Being dealt a flush (not a straight flush) in a 5-card poker hand",
+    "answer": 509,
+    "explanation": "C(13,5) × 4 suits = 5,148 hands, minus the 40 straight flushes = 5,108 out of 2,598,960."
+  },
+  {
+    "question": "Your birthday being on February 29",
+    "answer": 1461,
+    "explanation": "One day every 4 years: 1 day out of 1,461 (365 × 4 + 1). Roughly 5 million people in the world are \"leaplings\"."
+  },
+  {
+    "question": "A shuffled deck having at least one card still in its original position",
+    "answer": 1.58,
+    "explanation": "About 63.2%, it's 1 - 1/e. Weirdly it's almost the same for 10 cards or 1,000 cards."
+  },
+  {
+    "question": "Getting a blackjack (ace + 10-value card) on the first two cards from one deck",
+    "answer": 20.72,
+    "explanation": "4 aces × 16 ten-value cards (10, J, Q, K) = 64 hands out of 1,326."
   }
 ]
