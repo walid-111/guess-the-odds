@@ -33,6 +33,22 @@ app.get('/api/today', (req, res) => {
   });
 });
 
+app.post('/api/answer', (req, res) => {
+  const id = Number(req.body.id);
+  const guess = Number(req.body.guess);
+  if (!id || !(guess >= 1)) return res.status(400).json({ error: 'id and guess (>= 1) needed' });
+
+  db.get('SELECT answer, explanation FROM questions WHERE id = ?', [id], (err, q) => {
+    if (err) return res.status(500).json({ error: 'database error' });
+    if (!q) return res.status(404).json({ error: 'question not found' });
+
+    // compare orders of magnitude: 1 in 100 vs 1 in 1000 is "1 off"
+    const off = Math.abs(Math.log10(guess) - Math.log10(q.answer));
+    const score = Math.max(0, Math.round(100 - off * 40));
+    res.json({ answer: q.answer, explanation: q.explanation, score });
+  });
+});
+
 app.listen(3000, () => {
   console.log('Server running on port 3000');
 });
