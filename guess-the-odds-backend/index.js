@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const db = require('./database');
+const score = require('./score');
 
 const app = express();
 app.use(cors());
@@ -42,10 +43,7 @@ app.post('/api/answer', (req, res) => {
     if (err) return res.status(500).json({ error: 'database error' });
     if (!q) return res.status(404).json({ error: 'question not found' });
 
-    // compare orders of magnitude: 1 in 100 vs 1 in 1000 is "1 off"
-    const off = Math.abs(Math.log10(guess) - Math.log10(q.answer));
-    const score = Math.max(0, Math.round(100 - off * 40));
-    res.json({ answer: q.answer, explanation: q.explanation, score });
+    res.json({ answer: q.answer, explanation: q.explanation, score: score(guess, q.answer) });
   });
 });
 
