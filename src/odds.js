@@ -1,0 +1,23 @@
+// the slider goes from 1 in 1 to 1 in a trillion, on a log scale
+// (each step multiplies the odds instead of adding to them)
+export const MAX_POWER = 12;
+
+// slider value (0 to 12) -> odds, rounded to 2 significant digits so it looks nice
+export function sliderToOdds(value) {
+  const odds = Math.pow(10, value);
+  if (odds < 10) return Math.round(odds * 10) / 10;
+  return Number(odds.toPrecision(2));
+}
+
+// 2.5 -> "1 in 2.5", 1500 -> "1 in 1,500", 3600000 -> "1 in 3.6 million"
+export function formatOdds(odds) {
+  const units = [
+    [1e12, 'trillion'],
+    [1e9, 'billion'],
+    [1e6, 'million'],
+  ];
+  for (const [size, name] of units) {
+    if (odds >= size) return `1 in ${Number((odds / size).toPrecision(3))} ${name}`;
+  }
+  return `1 in ${odds.toLocaleString('en-US', { maximumFractionDigits: odds < 10 ? 2 : 1 })}`;
+}

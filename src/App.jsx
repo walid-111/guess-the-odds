@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
+import Question from './components/Question';
 
 function App() {
   const [day, setDay] = useState(null);
@@ -19,7 +20,7 @@ function App() {
       <h1>Guess The Odds</h1>
       {day && <p>#{day}</p>}
       {questions.map(q => (
-        <p key={q.id}>{q.question}</p>
+        <Question key={q.id} question={q} />
       ))}
     </>
   );
