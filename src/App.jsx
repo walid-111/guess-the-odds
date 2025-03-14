@@ -5,6 +5,7 @@ import Question from './components/Question';
 function App() {
   const [day, setDay] = useState(null);
   const [questions, setQuestions] = useState([]);
+  const [results, setResults] = useState([]);
 
   useEffect(() => {
     fetch('/api/today')
@@ -15,13 +16,21 @@ function App() {
       });
   }, []);
 
+  // one question at a time
+  const current = questions[results.length];
+
   return (
     <>
       <h1>Guess The Odds</h1>
       {day && <p>#{day}</p>}
-      {questions.map(q => (
-        <Question key={q.id} question={q} />
-      ))}
+      {current && (
+        <Question
+          key={current.id}
+          question={current}
+          onDone={result => setResults([...results, result])}
+        />
+      )}
+      {questions.length > 0 && !current && <p>Done for today!</p>}
     </>
   );
 }
