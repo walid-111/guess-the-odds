@@ -22,7 +22,7 @@ function App() {
   return (
     <>
       <h1>Guess The Odds</h1>
-      {day && <p>#{day}</p>}
+      {day && <p className="day">#{day}</p>}
       {current && (
         <Question
           key={current.id}

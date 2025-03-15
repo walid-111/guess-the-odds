@@ -18,7 +18,7 @@ function Question({ question, onDone }) {
 
   return (
     <div className="question">
-      <p>{question.question}</p>
+      <p className="question-text">{question.question}</p>
 
       {!result && (
         <>
@@ -40,7 +40,7 @@ function Question({ question, onDone }) {
           <p>Your guess: {formatOdds(result.guess)}</p>
           <p className="odds">{formatOdds(result.answer)}</p>
           <p>{result.score} / 100</p>
-          <p>{result.explanation}</p>
+          <p className="explanation">{result.explanation}</p>
           <button onClick={() => onDone(result)}>Next</button>
         </>
       )}
