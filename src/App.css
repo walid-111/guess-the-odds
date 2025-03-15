@@ -39,3 +39,22 @@ input[type="range"] {
   color: var(--muted);
   line-height: 1.5;
 }
+
+.verdict {
+  font-size: 1.3em;
+  font-weight: 700;
+}
+
+.label {
+  color: var(--muted);
+  margin: 0;
+}
+
+.result {
+  animation: pop 0.3s ease-out;
+}
+
+@keyframes pop {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}

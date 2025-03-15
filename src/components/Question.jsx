@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { MAX_POWER, sliderToOdds, formatOdds } from '../odds';
+import { MAX_POWER, sliderToOdds, formatOdds, verdict } from '../odds';
 
 function Question({ question, onDone }) {
   const [value, setValue] = useState(3);
@@ -36,13 +36,16 @@ function Question({ question, onDone }) {
       )}
 
       {result && (
-        <>
-          <p>Your guess: {formatOdds(result.guess)}</p>
+        <div className="result">
+          <p className="verdict" style={{ color: verdict(result.score).color }}>
+            {verdict(result.score).emoji} {verdict(result.score).text} {result.score}/100
+          </p>
+          <p className="label">Real odds</p>
           <p className="odds">{formatOdds(result.answer)}</p>
-          <p>{result.score} / 100</p>
+          <p className="label">You said {formatOdds(result.guess)}</p>
           <p className="explanation">{result.explanation}</p>
           <button onClick={() => onDone(result)}>Next</button>
-        </>
+        </div>
       )}
     </div>
   );

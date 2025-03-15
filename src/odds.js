@@ -21,3 +21,11 @@ export function formatOdds(odds) {
   }
   return `1 in ${odds.toLocaleString('en-US', { maximumFractionDigits: odds < 10 ? 2 : 1 })}`;
 }
+
+// emoji + message for a score
+export function verdict(score) {
+  if (score === 100) return { emoji: '🟩', text: 'Perfect!', color: '#4ADE80' };
+  if (score >= 80) return { emoji: '🟩', text: 'Nailed it!', color: '#4ADE80' };
+  if (score >= 50) return { emoji: '🟨', text: 'Not bad!', color: '#FACC15' };
+  return { emoji: '🟥', text: 'Way off...', color: '#F87171' };
+}
