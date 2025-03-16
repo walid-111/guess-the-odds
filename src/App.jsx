@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import Question from './components/Question';
+import Summary from './components/Summary';
 
 function App() {
   const [day, setDay] = useState(null);
@@ -30,7 +31,7 @@ function App() {
           onDone={result => setResults([...results, result])}
         />
       )}
-      {questions.length > 0 && !current && <p>Done for today!</p>}
+      {questions.length > 0 && !current && <Summary results={results} />}
     </>
   );
 }

@@ -58,3 +58,9 @@ input[type="range"] {
   from { transform: scale(0.9); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
 }
+
+.emojis {
+  font-size: 2em;
+  letter-spacing: 0.2em;
+  margin: 0.3em 0;
+}
