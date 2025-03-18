@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import Question from './components/Question';
 import Summary from './components/Summary';
+import { loadResults, saveResults } from './storage';
 
 function App() {
   const [day, setDay] = useState(null);
@@ -14,6 +15,7 @@ function App() {
       .then(data => {
         setDay(data.day);
         setQuestions(data.questions);
+        setResults(loadResults(data.day)); // already played today? (page refreshed)
       });
   }, []);
 
@@ -28,7 +30,11 @@ function App() {
         <Question
           key={current.id}
           question={current}
-          onDone={result => setResults([...results, result])}
+          onDone={result => {
+            const newResults = [...results, result];
+            setResults(newResults);
+            saveResults(day, newResults);
+          }}
         />
       )}
       {questions.length > 0 && !current && <Summary results={results} />}
