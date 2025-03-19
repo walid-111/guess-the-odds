@@ -1,14 +1,21 @@
 import { verdict } from '../odds';
+import { loadStats } from '../storage';
 
 function Summary({ results }) {
   const total = results.reduce((sum, r) => sum + r.score, 0);
   const max = results.length * 100;
+  const stats = loadStats();
 
   return (
     <div className="question summary">
       <p className="label">Today's score</p>
       <p className="odds">{total} / {max}</p>
       <p className="emojis">{results.map(r => verdict(r.score).emoji).join(' ')}</p>
+      <div className="stats">
+        <div><b>{stats.streak}</b> 🔥 streak</div>
+        <div><b>{stats.best}</b> best</div>
+        <div><b>{stats.played}</b> played</div>
+      </div>
       <p className="explanation">Come back tomorrow for 2 new questions!</p>
     </div>
   );
