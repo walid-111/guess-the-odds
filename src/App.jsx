@@ -38,7 +38,7 @@ function App() {
           }}
         />
       )}
-      {questions.length > 0 && !current && <Summary results={results} />}
+      {questions.length > 0 && !current && <Summary day={day} results={results} />}
     </>
   );
 }
