@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { verdict } from '../odds';
 import { loadStats } from '../storage';
+import Countdown from './Countdown';
 
 function Summary({ day, results }) {
   const [copied, setCopied] = useState(false);
@@ -31,7 +32,7 @@ function Summary({ day, results }) {
         <div><b>{stats.played}</b> played</div>
       </div>
       <button onClick={share}>{copied ? 'Copied!' : 'Share'}</button>
-      <p className="explanation">Come back tomorrow for 2 new questions!</p>
+      <Countdown />
     </div>
   );
 }
