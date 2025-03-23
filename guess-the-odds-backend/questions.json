@@ -98,5 +98,105 @@
     "question": "Getting a blackjack (ace + 10-value card) on the first two cards from one deck",
     "answer": 20.72,
     "explanation": "4 aces × 16 ten-value cards (10, J, Q, K) = 64 hands out of 1,326."
+  },
+  {
+    "question": "Flipping a coin 20 times and getting heads every time",
+    "answer": 1048576,
+    "explanation": "(1/2)^20 = 1/1,048,576. Double the flips, and the odds get squared."
+  },
+  {
+    "question": "Rolling at least one 6 in 4 rolls of a die",
+    "answer": 1.93,
+    "explanation": "1 - (5/6)^4 = 51.8%. A famous bet from 1654 that started probability theory (Pascal and Fermat)."
+  },
+  {
+    "question": "Rolling at least one double six in 24 rolls of two dice",
+    "answer": 2.03,
+    "explanation": "1 - (35/36)^24 = 49.1%, just under half. The gambler Chevalier de Méré lost money thinking it was over 50%."
+  },
+  {
+    "question": "Being dealt 13 cards of the same suit in bridge",
+    "answer": 158753389900,
+    "explanation": "4 perfect hands out of 635,013,559,600 possible bridge hands. People claim it happened way more often than that, usually with a new deck that wasn't shuffled enough."
+  },
+  {
+    "question": "Winning the UK Lotto (6 numbers out of 59)",
+    "answer": 45057474,
+    "explanation": "C(59,6) = 45,057,474 possible tickets."
+  },
+  {
+    "question": "A monkey typing random letters writing \"hello\" in 5 keystrokes",
+    "answer": 11881376,
+    "explanation": "26 letters for each of the 5 keys: 26^5 = 11,881,376."
+  },
+  {
+    "question": "Rolling 1, 2, 3, 4, 5, 6 in that order with 6 rolls of a die",
+    "answer": 46656,
+    "explanation": "(1/6)^6 = 1/46,656."
+  },
+  {
+    "question": "Rolling each number exactly once in 6 rolls of a die (any order)",
+    "answer": 64.8,
+    "explanation": "6! = 720 good orders out of 46,656 possible results."
+  },
+  {
+    "question": "Getting a full house in a 5-card poker hand",
+    "answer": 694,
+    "explanation": "13 × C(4,3) × 12 × C(4,2) = 3,744 hands out of 2,598,960."
+  },
+  {
+    "question": "Passing a 10-question multiple choice test (4 options) with 7 or more by guessing",
+    "answer": 285,
+    "explanation": "Add the chances of 7, 8, 9 and 10 good answers with 1/4 per question: about 0.35%."
+  },
+  {
+    "question": "Drawing 5 cards and getting only hearts",
+    "answer": 2019,
+    "explanation": "C(13,5) = 1,287 all-heart hands out of 2,598,960."
+  },
+  {
+    "question": "A random 5-card poker hand having at least a pair",
+    "answer": 2,
+    "explanation": "1,302,540 hands have nothing (high card only), a bit more than half. So almost exactly 1 in 2 hands has a pair or better."
+  },
+  {
+    "question": "Two people both picking the same random number between 1 and 10",
+    "answer": 10,
+    "explanation": "Whatever the first person picks, the second has 1 chance in 10 to match."
+  },
+  {
+    "question": "Looking at a 24h clock at a random minute and seeing all 4 digits the same",
+    "answer": 480,
+    "explanation": "Only 00:00, 11:11 and 22:22 work, 3 minutes out of 1,440 in a day."
+  },
+  {
+    "question": "Rolling a Yahtzee within 3 rolls (keeping the dice that match)",
+    "answer": 22.08,
+    "explanation": "If you always keep the most common number and reroll the rest, you get it about 4.5% of the time."
+  },
+  {
+    "question": "5 dice all showing different numbers",
+    "answer": 10.8,
+    "explanation": "6 × 5 × 4 × 3 × 2 = 720 good results out of 7,776."
+  },
+  {
+    "question": "3 kids each drawing their own name out of a hat",
+    "answer": 6,
+    "explanation": "3 names can be drawn in 6 orders, only one gives everyone their own name."
+  },
+  {
+    "question": "Winning the Mega Millions jackpot with one ticket",
+    "answer": 302575350,
+    "explanation": "5 numbers out of 70 (12,103,014 combinations) × 1 Mega Ball out of 25 = 302,575,350."
+  },
+  {
+    "question": "Picking the right card out of a full deck twice in a row",
+    "answer": 2704,
+    "explanation": "1/52 each time (card put back): 1/2,704."
+  },
+  {
+    "question": "Two random students in a class of 30 sharing a birthday",
+    "answer": 1.42,
+    "explanation": "About 70.6%. With 30 people there are 435 possible pairs."
   }
 ]
