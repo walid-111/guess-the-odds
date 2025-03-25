@@ -78,3 +78,34 @@ input[type="range"] {
   font-size: 1.5em;
   color: #E5E7EB;
 }
+
+header {
+  position: relative;
+}
+
+.help {
+  position: absolute;
+  right: 0;
+  top: 0.4em;
+  width: 2.2em;
+  height: 2.2em;
+  padding: 0;
+  border-radius: 50%;
+  background: var(--card);
+  color: var(--blue);
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+}
+
+.overlay .question {
+  max-width: 420px;
+  line-height: 1.5;
+}
