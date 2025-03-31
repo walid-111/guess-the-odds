@@ -37,6 +37,8 @@ function App() {
         <Question
           key={current.id}
           question={current}
+          number={results.length + 1}
+          total={questions.length}
           onDone={result => {
             const newResults = [...results, result];
             setResults(newResults);

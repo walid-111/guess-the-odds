@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { MAX_POWER, sliderToOdds, formatOdds, verdict } from '../odds';
 
-function Question({ question, onDone }) {
+function Question({ question, number, total, onDone }) {
   const [value, setValue] = useState(3);
   const [result, setResult] = useState(null);
   const guess = sliderToOdds(value);
@@ -18,6 +18,7 @@ function Question({ question, onDone }) {
 
   return (
     <div className="question">
+      <p className="label">Question {number}/{total} · What are the odds of...</p>
       <p className="question-text">{question.question}</p>
 
       {!result && (
@@ -31,6 +32,10 @@ function Question({ question, onDone }) {
             value={value}
             onChange={e => setValue(Number(e.target.value))}
           />
+          <div className="slider-labels">
+            <span>happens all the time</span>
+            <span>basically never</span>
+          </div>
           <button onClick={submit}>Guess</button>
         </>
       )}
