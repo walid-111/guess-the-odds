@@ -29,3 +29,11 @@ export function verdict(score) {
   if (score >= 50) return { emoji: '🟨', text: 'Not bad!', color: '#FACC15' };
   return { emoji: '🟥', text: 'Way off...', color: '#F87171' };
 }
+
+// to get a feel for big numbers: 1 in 1,024 = 10 heads in a row
+export function coinFlips(odds) {
+  const flips = Math.round(Math.log2(odds));
+  if (flips < 1) return 'Almost a sure thing';
+  if (flips === 1) return 'Like calling a coin flip right';
+  return `Like flipping ${flips} heads in a row 🪙`;
+}

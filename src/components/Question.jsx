@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { MAX_POWER, sliderToOdds, formatOdds, verdict } from '../odds';
+import { MAX_POWER, sliderToOdds, formatOdds, verdict, coinFlips } from '../odds';
 
 function Question({ question, number, total, onDone }) {
   const [value, setValue] = useState(3);
@@ -24,6 +24,7 @@ function Question({ question, number, total, onDone }) {
       {!result && (
         <>
           <p className="odds">{formatOdds(guess)}</p>
+          <p className="label">{coinFlips(guess)}</p>
           <input
             type="range"
             min="0"
@@ -47,7 +48,8 @@ function Question({ question, number, total, onDone }) {
           </p>
           <p className="label">Real odds</p>
           <p className="odds">{formatOdds(result.answer)}</p>
-          <p className="label">You said {formatOdds(result.guess)}</p>
+          <p className="label">{coinFlips(result.answer)}</p>
+          <p className="label you-said">You said {formatOdds(result.guess)}</p>
           <p className="explanation">{result.explanation}</p>
           <button onClick={() => onDone(result)}>Next</button>
         </div>
