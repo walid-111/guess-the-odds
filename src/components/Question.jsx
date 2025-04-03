@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { MAX_POWER, sliderToOdds, formatOdds, verdict, coinFlips } from '../odds';
 
-function Question({ question, number, total, onDone }) {
+function Question({ question, number, total, onAnswer, onNext }) {
   const [value, setValue] = useState(3);
   const [result, setResult] = useState(null);
   const guess = sliderToOdds(value);
@@ -13,7 +13,11 @@ function Question({ question, number, total, onDone }) {
       body: JSON.stringify({ id: question.id, guess }),
     })
       .then(res => res.json())
-      .then(data => setResult({ ...data, guess }));
+      .then(data => {
+        const newResult = { ...data, guess };
+        setResult(newResult);
+        onAnswer(newResult); // saved right away, so refreshing doesnt give a second try
+      });
   }
 
   return (
@@ -51,7 +55,7 @@ function Question({ question, number, total, onDone }) {
           <p className="label">{coinFlips(result.answer)}</p>
           <p className="label you-said">You said {formatOdds(result.guess)}</p>
           <p className="explanation">{result.explanation}</p>
-          <button onClick={() => onDone(result)}>Next</button>
+          <button onClick={onNext}>Next</button>
         </div>
       )}
     </div>

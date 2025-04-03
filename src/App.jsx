@@ -9,6 +9,7 @@ function App() {
   const [day, setDay] = useState(null);
   const [questions, setQuestions] = useState([]);
   const [results, setResults] = useState([]);
+  const [step, setStep] = useState(0);
   // show the rules the first time someone comes
   const [showHelp, setShowHelp] = useState(!localStorage.getItem('stats') && !localStorage.getItem('today'));
 
@@ -18,12 +19,14 @@ function App() {
       .then(data => {
         setDay(data.day);
         setQuestions(data.questions);
-        setResults(loadResults(data.day)); // already played today? (page refreshed)
+        const saved = loadResults(data.day); // already played today? (page refreshed)
+        setResults(saved);
+        setStep(saved.length);
       });
   }, []);
 
   // one question at a time
-  const current = questions[results.length];
+  const current = questions[step];
 
   return (
     <>
@@ -37,14 +40,15 @@ function App() {
         <Question
           key={current.id}
           question={current}
-          number={results.length + 1}
+          number={step + 1}
           total={questions.length}
-          onDone={result => {
+          onAnswer={result => {
             const newResults = [...results, result];
             setResults(newResults);
             saveResults(day, newResults);
             if (newResults.length === questions.length) finishDay(day);
           }}
+          onNext={() => setStep(step + 1)}
         />
       )}
       {questions.length > 0 && !current && <Summary day={day} results={results} />}
