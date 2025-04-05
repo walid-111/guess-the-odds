@@ -4,6 +4,7 @@ import { MAX_POWER, sliderToOdds, formatOdds, verdict, coinFlips } from '../odds
 function Question({ question, number, total, onAnswer, onNext }) {
   const [value, setValue] = useState(3);
   const [result, setResult] = useState(null);
+  const [error, setError] = useState(false);
   const guess = sliderToOdds(value);
 
   function submit() {
@@ -12,12 +13,16 @@ function Question({ question, number, total, onAnswer, onNext }) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ id: question.id, guess }),
     })
-      .then(res => res.json())
+      .then(res => {
+        if (!res.ok) throw new Error('server error');
+        return res.json();
+      })
       .then(data => {
         const newResult = { ...data, guess };
         setResult(newResult);
         onAnswer(newResult); // saved right away, so refreshing doesnt give a second try
-      });
+      })
+      .catch(() => setError(true));
   }
 
   return (
@@ -42,6 +47,7 @@ function Question({ question, number, total, onAnswer, onNext }) {
             <span>basically never</span>
           </div>
           <button onClick={submit}>Guess</button>
+          {error && <p className="explanation">Something went wrong, try again.</p>}
         </>
       )}
 
