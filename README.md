@@ -25,6 +25,8 @@ npm run dev
 
 Open http://localhost:5173.
 
+For production it's a single server: `npm run build` builds the frontend, then `npm start` runs Express, which serves the game and the API. `render.yaml` deploys it on Render's free plan.
+
 ## How it works
 
 The frontend is React with Vite. The backend is Express with SQLite, and the questions live in `guess-the-odds-backend/questions.json`. They're loaded into the database when the server starts.

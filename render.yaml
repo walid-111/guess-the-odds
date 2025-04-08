@@ -1,0 +1,8 @@
+# one free web service: express serves the api + the built react app
+services:
+  - type: web
+    name: guess-the-odds
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build && npm install --prefix guess-the-odds-backend
+    startCommand: npm start

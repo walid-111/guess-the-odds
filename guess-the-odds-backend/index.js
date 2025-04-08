@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express');
 const cors = require('cors');
 const db = require('./database');
@@ -6,6 +7,9 @@ const score = require('./score');
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+// once built (npm run build), the frontend is served from here too, so the whole game is one server
+app.use(express.static(path.join(__dirname, '..', 'dist')));
 
 const START_DATE = Date.UTC(2025, 2, 1); // day #1 = March 1st 2025
 const DAY = 24 * 60 * 60 * 1000;
@@ -47,6 +51,7 @@ app.post('/api/answer', (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log('Server running on port 3000');
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
