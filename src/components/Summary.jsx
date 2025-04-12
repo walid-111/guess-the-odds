@@ -25,11 +25,19 @@ function Summary({ day, results }) {
     <div className="question summary">
       <p className="label">Today's score</p>
       <p className="odds">{total} / {max}</p>
-      <p className="emojis">{emojis}</p>
+      <div className="recap">
+        {results.map((r, i) => (
+          <div key={i} className="recap-row">
+            <span>{verdict(r.score).emoji}</span>
+            <span className="recap-question">{r.question || `Question ${i + 1}`}</span>
+            <b>{r.score} pts</b>
+          </div>
+        ))}
+      </div>
       <div className="stats">
-        <div><b>{stats.streak}</b> 🔥 streak</div>
-        <div><b>{stats.best}</b> best</div>
-        <div><b>{stats.played}</b> played</div>
+        <div><b>🔥 {stats.streak}</b> Current streak</div>
+        <div><b>{stats.best}</b> Best streak</div>
+        <div><b>{stats.played}</b> Days played</div>
       </div>
       <button onClick={share}>{copied ? 'Copied!' : 'Share'}</button>
       <Countdown />

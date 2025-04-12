@@ -18,7 +18,7 @@ function Question({ question, number, total, onAnswer, onNext }) {
         return res.json();
       })
       .then(data => {
-        const newResult = { ...data, guess };
+        const newResult = { ...data, guess, question: question.question };
         setResult(newResult);
         onAnswer(newResult); // saved right away, so refreshing doesnt give a second try
       })
