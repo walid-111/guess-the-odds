@@ -6,7 +6,7 @@ A daily guessing game. Every day there are 2 new questions like "what are the od
 
 The closer you are, the more points you get. Being exactly right gives 100, being 10 times off gives 60, and 100 times off gives 20. After each guess you see the real odds and how they're calculated. At the end you get your score, your streak, and a share button with emojis (🟩 🟨 🟥), like Wordle.
 
-Everyone gets the same questions on the same day, and they change at midnight UTC. All the answers are exact math (cards, dice, lotteries, birthdays…), so no "odds of being hit by lightning" with numbers that change depending on the source.
+Everyone gets the same questions on the same day, and they change at midnight in your own time zone. All the answers are exact math (cards, dice, lotteries, birthdays…), so no "odds of being hit by lightning" with numbers that change depending on the source.
 
 ## Run it
 

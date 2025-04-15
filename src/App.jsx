@@ -5,6 +5,14 @@ import Summary from './components/Summary';
 import HowToPlay from './components/HowToPlay';
 import { loadResults, saveResults, finishDay } from './storage';
 
+// day number from the player's own date, so new questions come at their midnight
+// (day 1 = March 1st 2025, same start as the server)
+function localDay() {
+  const now = new Date();
+  const today = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
+  return Math.round((today - Date.UTC(2025, 2, 1)) / (24 * 60 * 60 * 1000)) + 1;
+}
+
 function App() {
   const [day, setDay] = useState(null);
   const [questions, setQuestions] = useState([]);
@@ -15,7 +23,7 @@ function App() {
   const [showHelp, setShowHelp] = useState(!localStorage.getItem('stats') && !localStorage.getItem('today'));
 
   useEffect(() => {
-    fetch('/api/today')
+    fetch(`/api/today?day=${localDay()}`)
       .then(res => {
         if (!res.ok) throw new Error('server error');
         return res.json();

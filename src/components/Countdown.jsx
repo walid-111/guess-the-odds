@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 
-// time left until midnight UTC (new questions)
+// time left until the player's midnight (new questions)
 function timeLeft() {
   const now = new Date();
-  const midnight = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + 1);
+  const midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
   const s = Math.floor((midnight - now) / 1000);
   const pad = n => String(n).padStart(2, '0');
   return `${pad(Math.floor(s / 3600))}:${pad(Math.floor((s % 3600) / 60))}:${pad(s % 60)}`;

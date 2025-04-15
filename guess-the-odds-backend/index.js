@@ -15,13 +15,19 @@ const START_DATE = Date.UTC(2025, 2, 1); // day #1 = March 1st 2025
 const DAY = 24 * 60 * 60 * 1000;
 const PER_DAY = 2;
 
-// same day number for everyone, changes at midnight UTC
+// day number in UTC
 function todayNumber() {
   return Math.floor((Date.now() - START_DATE) / DAY) + 1;
 }
 
 app.get('/api/today', (req, res) => {
-  const day = todayNumber();
+  // the browser sends its own day number, so questions change at the player's midnight (like wordle).
+  // only today +/- 1 is accepted (time zones), so nobody can look at future questions
+  const utcDay = todayNumber();
+  const day = req.query.day ? Number(req.query.day) : utcDay;
+  if (!Number.isInteger(day) || Math.abs(day - utcDay) > 1) {
+    return res.status(400).json({ error: 'wrong day' });
+  }
 
   db.get('SELECT COUNT(*) AS count FROM questions', (err, row) => {
     if (err) return res.status(500).json({ error: 'database error' });
