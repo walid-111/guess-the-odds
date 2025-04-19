@@ -298,5 +298,155 @@
     "question": "Shuffled deck: the top two cards are both aces",
     "answer": 221,
     "explanation": "4/52 × 3/51 = 12/2,652 = 1/221. Same odds as pocket aces."
+  },
+  {
+    "question": "Rolling a double (both dice the same) with two dice",
+    "answer": 6,
+    "explanation": "6 doubles out of 36 combinations. In Monopoly that's your extra turn."
+  },
+  {
+    "question": "Rolling three doubles in a row in Monopoly (straight to jail)",
+    "answer": 216,
+    "explanation": "Each roll is 1/6, so (1/6)^3 = 1/216."
+  },
+  {
+    "question": "Flipping a coin 3 times and getting 3 heads",
+    "answer": 8,
+    "explanation": "1/2 × 1/2 × 1/2 = 1/8."
+  },
+  {
+    "question": "Getting exactly 50 heads in 100 coin flips",
+    "answer": 12.56,
+    "explanation": "C(100,50) / 2^100, about 8%. The most likely result, and still very unlikely."
+  },
+  {
+    "question": "Someone in a room of 30 sharing YOUR birthday",
+    "answer": 13.08,
+    "explanation": "Only about 7.6%. Very different from \"any two people share a birthday\" (70%), because here it has to be your date."
+  },
+  {
+    "question": "Being dealt a straight (not a straight flush) in a 5-card poker hand",
+    "answer": 255,
+    "explanation": "10 possible straights × 4^5 suit combinations, minus the 40 straight flushes = 10,200 hands."
+  },
+  {
+    "question": "Being dealt exactly one pair in a 5-card poker hand",
+    "answer": 2.37,
+    "explanation": "13 × C(4,2) × C(12,3) × 4^3 = 1,098,240 hands, the most common poker hand after \"nothing\"."
+  },
+  {
+    "question": "Making a royal flush with 7 cards in Texas Hold'em (your 2 + the 5 on the table)",
+    "answer": 30940,
+    "explanation": "4 royal flushes, and the 2 other cards can be anything: 4 × C(47,2) = 4,324 out of 133,784,560 seven-card combinations."
+  },
+  {
+    "question": "Being dealt any pocket pair in Texas Hold'em",
+    "answer": 17,
+    "explanation": "13 ranks × 6 ways to pick 2 of the 4 cards = 78 pairs out of 1,326 hands."
+  },
+  {
+    "question": "Hitting three of a kind on the flop when you have a pocket pair",
+    "answer": 8.51,
+    "explanation": "2 cards left of your rank among 50: 1 - C(48,3)/C(50,3), about 11.8%. Poker players call it \"set mining\"."
+  },
+  {
+    "question": "Both players getting pocket aces in the same heads-up Texas Hold'em hand",
+    "answer": 270725,
+    "explanation": "You get pocket aces (1 in 221), then your opponent gets the 2 other aces out of the 1,225 possible hands left."
+  },
+  {
+    "question": "The 4 aces all ending up next to each other in a shuffled deck",
+    "answer": 5525,
+    "explanation": "Glue the 4 aces into one block: 49 positions × 4! orders inside the block × 48! for the other cards, divided by 52!."
+  },
+  {
+    "question": "The top card of a shuffled deck being a heart",
+    "answer": 4,
+    "explanation": "13 hearts out of 52 cards."
+  },
+  {
+    "question": "Drawing 4 cards and getting one of each suit",
+    "answer": 9.48,
+    "explanation": "13 choices in each suit: 13^4 = 28,561 good hands out of 270,725."
+  },
+  {
+    "question": "Rolling three dice and getting the same number on all three",
+    "answer": 36,
+    "explanation": "6 good results (1-1-1 up to 6-6-6) out of 216."
+  },
+  {
+    "question": "Rolling no 6 at all in 6 rolls of a die",
+    "answer": 2.99,
+    "explanation": "(5/6)^6, about 33%. Even with 6 rolls, a 6 is not guaranteed at all."
+  },
+  {
+    "question": "Rolling a large straight (1-2-3-4-5 or 2-3-4-5-6) with 5 dice in one roll",
+    "answer": 32.4,
+    "explanation": "2 sets of numbers × 5! orders = 240 results out of 7,776."
+  },
+  {
+    "question": "Rolling a small straight (4 numbers in a row) with 5 dice in one roll",
+    "answer": 6.48,
+    "explanation": "1,200 of the 7,776 possible rolls contain 1-2-3-4, 2-3-4-5 or 3-4-5-6."
+  },
+  {
+    "question": "Rolling a full house (3 of one number, 2 of another) with 5 dice in one roll",
+    "answer": 25.92,
+    "explanation": "6 × 5 numbers × C(5,3) positions = 300 results out of 7,776."
+  },
+  {
+    "question": "Rolling a 6 or an 8 with two dice in Catan",
+    "answer": 3.6,
+    "explanation": "5 combinations make 6 and 5 make 8: 10 out of 36. That's why those spots are worth the most."
+  },
+  {
+    "question": "Two dice multiplied together giving an even number",
+    "answer": 1.33,
+    "explanation": "It's odd only if both dice are odd (9 of 36), so even 27 times out of 36."
+  },
+  {
+    "question": "Winning the French Loto jackpot (5 numbers out of 49 + the lucky number)",
+    "answer": 19068840,
+    "explanation": "C(49,5) = 1,906,884 combinations × 10 lucky numbers = 19,068,840."
+  },
+  {
+    "question": "Winning the smallest Powerball prize (only the red ball, none of the white ones)",
+    "answer": 38.32,
+    "explanation": "You have to miss all 5 white balls (C(64,5) / C(69,5)) and hit the Powerball (1/26). About 1 in 38."
+  },
+  {
+    "question": "Guessing the top 3 of a 20-driver F1 race in the right order, at random",
+    "answer": 6840,
+    "explanation": "20 × 19 × 18 = 6,840 possible podiums."
+  },
+  {
+    "question": "Two friends sitting next to each other when 10 people sit randomly in a row",
+    "answer": 5,
+    "explanation": "9 pairs of side-by-side seats × 2 ways to sit = 18 good spots out of 90."
+  },
+  {
+    "question": "A couple sitting next to each other at a random round table of 8",
+    "answer": 3.5,
+    "explanation": "Wherever the first one sits, 2 of the 7 seats left are next to them."
+  },
+  {
+    "question": "Guessing the Wordle answer on the first try (from the original 2,315 answers)",
+    "answer": 2315,
+    "explanation": "The original Wordle had 2,315 possible answers. Picking one at random won't get you far."
+  },
+  {
+    "question": "Being dealt no ace at all in a 13-card bridge hand",
+    "answer": 3.29,
+    "explanation": "C(48,13) / C(52,13), about 30%."
+  },
+  {
+    "question": "Being dealt all 4 aces in a 13-card bridge hand",
+    "answer": 379,
+    "explanation": "The 4 aces + 9 cards from the other 48: C(48,9) / C(52,13), about 0.26%."
+  },
+  {
+    "question": "Winning the car in the Monty Hall game if you keep your first door",
+    "answer": 3,
+    "explanation": "Your door has 1 in 3. The host always opens a goat door, so switching wins 2 times out of 3!"
   }
 ]
