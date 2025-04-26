@@ -448,5 +448,155 @@
     "question": "Winning the car in the Monty Hall game if you keep your first door",
     "answer": 3,
     "explanation": "Your door has 1 in 3. The host always opens a goat door, so switching wins 2 times out of 3!"
+  },
+  {
+    "question": "A Secret Santa with 10 people where nobody draws themselves",
+    "answer": 2.72,
+    "explanation": "About 36.8%, and it's almost exactly 1/e for any group of more than 5 people."
+  },
+  {
+    "question": "Two people sharing a birthday in a group of 10",
+    "answer": 8.55,
+    "explanation": "About 11.7%, already 45 possible pairs."
+  },
+  {
+    "question": "Two people sharing a birthday in a group of 57",
+    "answer": 1.01,
+    "explanation": "99%! With 57 people it's almost certain, even though there are 365 days."
+  },
+  {
+    "question": "Grabbing 2 random socks from 5 mixed pairs and getting a match",
+    "answer": 9,
+    "explanation": "5 matching pairs out of C(10,2) = 45 ways to pick 2 socks."
+  },
+  {
+    "question": "Red coming up 10 times in a row at European roulette",
+    "answer": 1347,
+    "explanation": "(18/37)^10. Each spin doesn't care about the last ones, no matter what people at the table think."
+  },
+  {
+    "question": "10 coin flips alternating perfectly (HTHTHTHTHT or THTHTHTHTH)",
+    "answer": 512,
+    "explanation": "2 good sequences out of 1,024."
+  },
+  {
+    "question": "A 3-player round of rock paper scissors having exactly one winner",
+    "answer": 3,
+    "explanation": "The winner can be any of the 3, with any of the 3 moves, and the 2 others must both play the losing one: 9 out of 27."
+  },
+  {
+    "question": "Tying 3 times in a row at rock paper scissors against a random player",
+    "answer": 27,
+    "explanation": "1/3 chance to tie each time: (1/3)^3."
+  },
+  {
+    "question": "Your first card in Uno being a wild card",
+    "answer": 13.5,
+    "explanation": "8 wild cards (4 Wild + 4 Wild Draw Four) out of 108."
+  },
+  {
+    "question": "Having at least one Wild Draw Four in a 7-card Uno starting hand",
+    "answer": 4.2,
+    "explanation": "1 - C(104,7)/C(108,7), about 24%."
+  },
+  {
+    "question": "A random first move in chess being e4",
+    "answer": 20,
+    "explanation": "White has 20 possible first moves: 16 pawn moves and 4 knight moves."
+  },
+  {
+    "question": "A random first move in tic-tac-toe being the center",
+    "answer": 9,
+    "explanation": "1 square out of 9. It's also the best first move."
+  },
+  {
+    "question": "A random 4-digit PIN having 4 different digits",
+    "answer": 1.98,
+    "explanation": "10 × 9 × 8 × 7 = 5,040 out of 10,000, about half."
+  },
+  {
+    "question": "Guessing the finishing order of 4 runners",
+    "answer": 24,
+    "explanation": "4! = 24 possible orders."
+  },
+  {
+    "question": "A random US state starting with M",
+    "answer": 6.25,
+    "explanation": "8 states start with M: Maine, Maryland, Massachusetts, Michigan, Minnesota, Mississippi, Missouri, Montana."
+  },
+  {
+    "question": "A random day of the year being in December",
+    "answer": 11.77,
+    "explanation": "31 days out of 365."
+  },
+  {
+    "question": "Looking at a 24h clock at a random minute and seeing a palindrome (like 12:21)",
+    "answer": 90,
+    "explanation": "16 times work: 00:00, 01:10, 02:20… 05:50, 10:01… 15:51, 20:02… 23:32. 16 minutes out of 1,440."
+  },
+  {
+    "question": "Drawing 3 cards and getting only face cards (J, Q, K)",
+    "answer": 100,
+    "explanation": "C(12,3) = 220 good hands out of 22,100."
+  },
+  {
+    "question": "Rolling 5 dice and getting at least one 6",
+    "answer": 1.67,
+    "explanation": "1 - (5/6)^5, about 60%."
+  },
+  {
+    "question": "3 random people all born in the same month",
+    "answer": 144,
+    "explanation": "Whatever the first one's month, the 2 others must match: 1/12 × 1/12 (if every month is equally likely)."
+  },
+  {
+    "question": "Being born on the same day of the week as today",
+    "answer": 7,
+    "explanation": "1 day of the week out of 7."
+  },
+  {
+    "question": "A random person having the same birthday as you (day and month)",
+    "answer": 365,
+    "explanation": "1 day out of 365 (ignoring February 29)."
+  },
+  {
+    "question": "Getting at least 8 right out of 10 true/false questions by guessing",
+    "answer": 18.29,
+    "explanation": "45 + 10 + 1 = 56 good ways out of 1,024, about 5.5%."
+  },
+  {
+    "question": "Shuffled deck: the first card is the ace of spades and the second the king of spades",
+    "answer": 2652,
+    "explanation": "1/52 then 1/51."
+  },
+  {
+    "question": "Drawing 2 cards from a deck and both being red",
+    "answer": 4.08,
+    "explanation": "26/52 for the first, then 25/51 for the second: about 24.5%."
+  },
+  {
+    "question": "A 5-card poker hand with all 5 cards in the same color (red or black)",
+    "answer": 19.75,
+    "explanation": "2 colors × C(26,5) = 131,560 hands, about 5%."
+  },
+  {
+    "question": "Rolling 4 dice and getting 4 different numbers",
+    "answer": 3.6,
+    "explanation": "6 × 5 × 4 × 3 = 360 out of 1,296."
+  },
+  {
+    "question": "A random 3-digit number (000-999) being a palindrome, like 121",
+    "answer": 10,
+    "explanation": "The first digit decides the last: 10 × 10 = 100 palindromes out of 1,000."
+  },
+  {
+    "question": "Two random people both born in the same season",
+    "answer": 4,
+    "explanation": "Whatever the first one's season, 1 chance in 4 for the second (if seasons are equally likely)."
+  },
+  {
+    "question": "A random card being worth 10 in blackjack (10, J, Q or K)",
+    "answer": 3.25,
+    "explanation": "16 cards are worth 10 (four 10s, Js, Qs and Ks) out of 52, almost 1 in 3."
   }
 ]
